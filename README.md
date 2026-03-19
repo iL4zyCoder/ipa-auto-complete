@@ -1,14 +1,11 @@
 # IPA Auto-Complete
-
-Type a word anywhere in RemNote to automatically show its IPA transcription. Press `Enter` to insert the IPA right after the word. Press `Escape` to dismiss the popup.
+Type a word in RemNote and then type `:` right after it. The plugin shows a small popup with the IPA transcription. Press `Enter` to insert the IPA, or `Escape` to dismiss.
 
 ## Features
-
-- Global hotkey: `Ctrl+I`
-- Detects the word before your cursor
+- Detects the word immediately before a `:` caret
 - Fetches IPA from `https://api.dictionaryapi.dev/api/v2/entries/en/{word}`
 - Shows a small tooltip under the caret
-- `Enter` inserts the IPA; `Escape` closes
+- `Enter` inserts the IPA (with a leading space); `Escape` closes
 
 ## Data privacy
 
@@ -28,6 +25,6 @@ This plugin sends the word you typed to a third-party service (`dictionaryapi.de
 1. Open RemNote and use a dummy knowledgebase.
 2. Develop from localhost:
    - URL: `http://localhost:8080`
-3. Type a word (example: `regular`) and press `Ctrl+I`.
+3. Type a word (example: `regular`), then type `:` right after it.
 4. Press `Enter` to insert the IPA, or `Escape` to dismiss.
 

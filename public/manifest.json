@@ -1,0 +1,22 @@
+{
+  "manifestVersion": 1,
+  "id": "ipa_auto_complete",
+  "name": "IPA Auto-Complete",
+  "author": "remnote",
+  "repoUrl": "https://github.com/Vinh217/ipa-auto-complete",
+  "version": {
+    "major": 0,
+    "minor": 0,
+    "patch": 1
+  },
+  "theme": [],
+  "enableOnMobile": false,
+  "description": "Type a word to show IPA automatically; press Enter to insert and Escape to dismiss.",
+  "requestNative": false,
+  "requiredScopes": [
+    {
+      "type": "All",
+      "level": "ReadCreateModify"
+    }
+  ]
+}

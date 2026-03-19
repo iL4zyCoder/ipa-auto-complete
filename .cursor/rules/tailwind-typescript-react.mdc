@@ -1,0 +1,34 @@
+---
+description: TailwindCSS + TypeScript + React conventions
+alwaysApply: true
+globs: src/**/*.{ts,tsx,js,jsx}
+---
+
+# Tailwind + TypeScript + React
+
+## TailwindCSS
+- Prefer Tailwind utility classes over custom CSS; if you need custom styles, add them via `@layer` (not random global selectors).
+- Keep `className` readable and deterministic: build class strings with an array + `.join(' ')` for conditionals.
+- Reuse repeated class sets: extract to a `const`/helper or a small component instead of duplicating long strings.
+
+## TypeScript
+- Follow `strict` rules: avoid `any`; prefer `unknown` + type guards.
+- Type React props with `type Props = {...}`; use specific event types (e.g. `React.MouseEvent<HTMLButtonElement>`).
+
+## React
+- Use function components and hooks at the top level only.
+- Ensure `useEffect` dependency lists are correct; avoid disabling the lint rule unless you have a strong reason.
+
+## Example: conditional `className` (no extra deps)
+```tsx
+type Props = { isActive: boolean };
+
+export function TagButton({ isActive }: Props) {
+  const className = [
+    'inline-flex items-center rounded px-2 py-1 text-sm font-medium',
+    isActive ? 'bg-blue-600 text-white' : 'bg-gray-100 text-gray-900',
+  ].join(' ');
+
+  return <button className={className}>Tag</button>;
+}
+```
